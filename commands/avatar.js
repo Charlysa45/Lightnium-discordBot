@@ -14,7 +14,7 @@ module.exports = {
         .setColor('GOLD')
         .setTitle(`${interaction.user.username}'s Avatar`)
 
-		if (user) return interaction.reply(avatarEmbed);
+		if (user) return interaction.reply({embeds: [avatarEmbed]});
 		return interaction.reply(`Your avatar: ${interaction.user.displayAvatarURL({ dynamic: true })}`);
 	},
 };
