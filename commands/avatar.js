@@ -12,7 +12,7 @@ module.exports = {
         const avatarEmbed = new MessageEmbed()
         .setColor('DARK_GOLD')
         .setTitle(`avatar:`)
-		if (user) return interaction.reply(channel.send({ embeds: [avatarEmbed]}));
-		return interaction.reply(channel.send({ embeds: [avatarEmbed]}));
+		if (user) return interaction.reply(avatarEmbed);
+		return interaction.reply(avatarEmbed);
 	},
 };
