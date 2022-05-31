@@ -8,11 +8,12 @@ module.exports = {
 		.addUserOption(option => option.setName('target').setDescription('The user\'s avatar to show')),
 	async execute(interaction) {
 		const user = interaction.options.getUser('target');
-        console.log(interaction.user)
+        console.log(interaction.user.avatarURL())
 
         const avatarEmbed = new MessageEmbed()
         .setColor('GOLD')
         .setTitle(`${interaction.user.username}'s Avatar`)
+        // .setImage(`${interaction.user.avatarURL()}`)
 
 		if (user) return interaction.reply({embeds: [avatarEmbed]});
 		return interaction.reply(`Your avatar: ${interaction.user.displayAvatarURL({ dynamic: true })}`);
