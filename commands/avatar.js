@@ -13,7 +13,7 @@ module.exports = {
         const avatarEmbed = new MessageEmbed()
         .setColor('GOLD')
         .setTitle(`${interaction.user.username}'s Avatar`)
-        // .setImage(`${interaction.user.avatarURL()}`)
+        .setImage(`${interaction.user.avatarURL()}`)
 
 		if (user) return interaction.reply({embeds: [avatarEmbed]});
 		return interaction.reply(`Your avatar: ${interaction.user.displayAvatarURL({ dynamic: true })}`);
