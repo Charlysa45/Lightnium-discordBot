@@ -11,8 +11,7 @@ module.exports = {
         const user = interaction.options.getUser('target');
         const avatarEmbed = new MessageEmbed()
         .setColor('DARK_GOLD')
-        .setTitle(`${user.username}'s avatar:`)
-        .setImage(user.avatar)
+        .setTitle(`avatar:`)
 		if (user) return interaction.reply(channel.send({ embeds: [avatarEmbed]}));
 		return interaction.reply(channel.send({ embeds: [avatarEmbed]}));
 	},
