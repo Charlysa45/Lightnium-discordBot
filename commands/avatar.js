@@ -15,10 +15,10 @@ module.exports = {
         .setTitle(`${interaction.user.username}'s Avatar`)
         .setImage(`${interaction.user.displayAvatarURL({ dynamic: true, format: 'png', size: 600 })}`);
         
-        const avatarEmbed = new MessageEmbed()
-        .setColor('GOLD')
-        .setTitle(`${user.username}'s Avatar`)
-        .setImage(`${user.displayAvatarURL({ dynamic: true })}`)
+        // const avatarEmbed = new MessageEmbed()
+        // .setColor('GOLD')
+        // .setTitle(`${user.username}'s Avatar`)
+        // .setImage(`${user.displayAvatarURL({ dynamic: true })}`)
 
 		if (user) return interaction.reply({embeds: [avatarSelfEmbed]});
 		return interaction.reply({embeds: [avatarSelfEmbed]});
