@@ -8,19 +8,22 @@ module.exports = {
 		.addUserOption(option => option.setName('target').setDescription('The user\'s avatar to show')),
 	async execute(interaction) {
 		const user = interaction.options.getUser('target');
-        console.log(user)
+        console.log(user.username)
 
-        const avatarSelfEmbed = new MessageEmbed()
-        .setColor('GOLD')
-        .setTitle(`${interaction.user.username}'s Avatar`)
-        .setImage(`${interaction.user.displayAvatarURL({ dynamic: true, format: 'png', size: 600 })}`);
+        const avatarEmbed = new MessageEmbed()
+
+        if (user) {
+           avatarEmbed
+            .setColor('GOLD')
+            .setTitle(`${user.username}'s Avatar`)
+            .setImage(`${user.displayAvatarURL({ dynamic: true, format: 'png', size: 600 })}`);
+        }else{
+            avatarEmbed
+            .setColor('GOLD')
+            .setTitle(`${interaction.user.username}'s Avatar`)
+            .setImage(`${interaction.user.displayAvatarURL({ dynamic: true, format: 'png', size: 600 })}`);
+        }
         
-        // const avatarEmbed = new MessageEmbed()
-        // .setColor('GOLD')
-        // .setTitle(`${user.username}'s Avatar`)
-        // .setImage(`${user.displayAvatarURL({ dynamic: true })}`)
-
-		if (user) return interaction.reply({embeds: [avatarSelfEmbed]});
-		return interaction.reply({embeds: [avatarSelfEmbed]});
+		return interaction.reply({embeds: [avatarEmbed]});
 	},
 };
