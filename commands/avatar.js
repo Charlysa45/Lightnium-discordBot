@@ -20,7 +20,7 @@ module.exports = {
         .setTitle(`${user.username}'s Avatar`)
         .setImage(`${user.displayAvatarURL({ dynamic: true })}`)
 
-		if (user) return interaction.reply({embeds: [avatarEmbed]});
+		if (user) return interaction.reply({embeds: [avatarSelfEmbed]});
 		return interaction.reply({embeds: [avatarSelfEmbed]});
 	},
 };
