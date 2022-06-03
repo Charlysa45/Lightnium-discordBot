@@ -12,13 +12,11 @@ module.exports = {
         const avatarEmbed = new MessageEmbed()
 
         if (!user) {
-            console.log(interaction.user)
             avatarEmbed
             .setColor('GOLD')
             .setTitle(`${interaction.user.username}'s Avatar`)
             .setImage(`${interaction.user.displayAvatarURL({ dynamic: true, format: 'png', size: 600 })}`);
         }else{
-            console.log(user)
             avatarEmbed
              .setColor('GOLD')
              .setTitle(`${user.username}'s Avatar`)
