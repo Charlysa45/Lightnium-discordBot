@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'guildMemberAdd',
 	once: true,
-	execute(member) {
+	async execute(member) {
 		console.log(member);
 	},
 };
